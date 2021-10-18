@@ -13,4 +13,14 @@ class Api_kabupaten extends Baseapi
 			$this->notFound();
 		}
 	}
+
+	public function getAllKabupaten()
+	{
+		$daftarKab = $this->db->query("SELECT * FROM wilayah_kabupaten")->result();
+		if (!empty($daftarKab)) {
+			$this->success('data ditemukan', 'data_kab', $daftarKab);
+		} else {
+			$this->notFound();
+		}
+	}
 }

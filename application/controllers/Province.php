@@ -25,6 +25,21 @@ class Province extends Basecontroller
 		$this->load->view('headfoot/footer');
 	}
 
+	public function cariProvinsi()
+	{
+		$namaProvinsi = $this->input->get_post('q');
+		$idNegara = $this->input->get_post('id');
+		$provinsi = $this->province->getProvinceWhere("wilayah_provinsi.nama as label, wilayah_provinsi.id as value", "nama LIKE '%$namaProvinsi%' AND country_code IN ('$idNegara')")->result();
+		if (empty($idNegara)) {
+			die(json_encode(['label' => 'Please Select Country First', 'value' => '']));
+		}
+
+		if (!empty($provinsi)) {
+			echo json_encode($provinsi);
+		} 
+	}
+
+
 	public function addProvince()
 	{
 		/* 

@@ -17,6 +17,33 @@ class Country extends Basecontroller
 		$this->load->view('headfoot/footer');
 	}
 
+	public function cariNegara()
+	{
+		$namaNegara = $this->input->get_post('q');
+		$negara = $this->country->getCountryWhere("name as label, alpha_2 as value", "name LIKE '$namaNegara%'")->result();
+		if (!empty($negara)) {
+			echo json_encode($negara);
+		} else {
+			echo json_encode(['message' => 'negara not found', 'code' => 404]);
+		}
+	}
+	public function cariMataUang()
+	{
+		$namaNegara = $this->input->get_post('q');
+		$negara = $this->country->getCountryWhere("*", "name LIKE '$namaNegara%'")->result();
+
+		if (!empty($negara)) {
+			$mataUang = [];
+			foreach ($negara as $n) {
+				$tmp = [];
+				$tmp['label'] = $n->name . " ($n->currencies)";
+				$tmp['value'] = $n->name . " ($n->currencies)";
+				array_push($mataUang, $tmp);
+			}
+			echo json_encode($mataUang);
+		}
+	}
+
 
 	function add()
 	{

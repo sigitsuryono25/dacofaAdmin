@@ -53,6 +53,13 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+//fishery
+$route['fishery-activity'] = 'Fisheryactivity/index';
+$route['fishery-activity/detail/(:any)'] = 'Fisheryactivity/hasilTangkapan/$1';
+$route['fishery-activity/form-add'] = 'Fisheryactivity/add';
+$route['fishery-activity/action-insert'] = 'Fisheryactivity/addFisheryActivity';
+$route['fishery-activity/action-delete/(:any)'] = 'Fisheryactivity/deleteActivity/$1';
+
 //user
 $route['user/user-list'] = "User/daftaruser";
 $route['user/form-add'] = "User/add";
@@ -60,6 +67,7 @@ $route['user/action-insert'] = "User/addUser";
 $route['user/form-edit'] = "User/formEditUser";
 $route['user/action-update'] = "User/updateUser";
 $route['user/action-delete'] = "User/deleteUser";
+$route['user/action-search'] = "User/cariUser";
 
 
 //Fishinggear
@@ -77,6 +85,8 @@ $route['country/action-insert'] = "Country/addCountry";
 $route['country/form-edit'] = "Country/formEditCountry";
 $route['country/action-update'] = "Country/updateCountry";
 $route['country/action-delete'] = "Country/deleteCountry";
+$route['country/action-search'] = "Country/cariNegara";
+$route['country/action-search-currencies'] = "Country/cariMataUang";
 
 //fish
 $route['fish/list'] = "Fish/daftarFish";
@@ -85,6 +95,7 @@ $route['fish/action-insert'] = "Fish/addFish";
 $route['fish/form-edit'] = "Fish/formEditFish";
 $route['fish/action-update'] = "Fish/updateFish";
 $route['fish/action-delete'] = "Fish/deleteFish";
+$route['fish/action-search'] = "Fish/cariIkan";
 
 
 //province
@@ -94,6 +105,7 @@ $route['province/action-insert'] = "Province/addProvince";
 $route['province/form-edit'] = "Province/formEditProvince";
 $route['province/action-update'] = "Province/updateProvince";
 $route['province/action-delete'] = "Province/deleteProvince";
+$route['province/action-search'] = "Province/cariProvinsi";
 
 //district
 $route['district/list'] = "District/daftarDistrict";
@@ -102,3 +114,4 @@ $route['district/action-insert'] = "District/addDistrict";
 $route['district/form-edit'] = "District/formEditDistrict";
 $route['district/action-update'] = "District/updateDistrict";
 $route['district/action-delete'] = "District/deleteDistrict";
+$route['district/action-search'] = "District/cariKabupaten";

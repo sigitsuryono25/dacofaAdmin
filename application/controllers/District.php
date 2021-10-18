@@ -17,6 +17,20 @@ class District extends Basecontroller
 		$this->load->view('headfoot/footer');
 	}
 
+	public function cariKabupaten()
+	{
+		$namaKabupaten = $this->input->get_post('q');
+		$idProvinsi = $this->input->get_post('id');
+		$kabupaten = $this->district->getDistrictWhere("wilayah_kabupaten.nama as label, wilayah_kabupaten.id as value", "wilayah_kabupaten.nama LIKE '%$namaKabupaten%' AND provinsi_id IN ('$idProvinsi')")->result();
+		if (empty($idProvinsi)) {
+			die(json_encode(['label' => 'Please Select Country First', 'value' => '']));
+		}
+
+		if (!empty($kabupaten)) {
+			echo json_encode($kabupaten);
+		} 
+	}
+
 
 	function add()
 	{

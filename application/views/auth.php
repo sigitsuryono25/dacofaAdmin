@@ -124,7 +124,7 @@
 			$.post(urlLogin, data, function(res) {
 				if (res.code == 200) {
 					alert(res.message);
-					location.assign('<?= site_url('user/user-list') ?>');
+					location.assign('<?= site_url('fishery-activity') ?>');
 				} else {
 					alert(res.message);
 				}

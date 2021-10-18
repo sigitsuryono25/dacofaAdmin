@@ -18,6 +18,15 @@ class User extends Basecontroller
 		$this->load->view('headfoot/footer');
 	}
 
+	public function cariUser()
+	{
+		$namaUser = $this->input->get_post('q');
+		$user = $this->user->getUserWhere("nama as label, userid as value", "nama LIKE '$namaUser%'")->result();
+		if (!empty($user)) {
+			echo json_encode($user);
+		}
+	}
+
 
 	function add()
 	{

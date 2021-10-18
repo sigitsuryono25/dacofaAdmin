@@ -17,6 +17,18 @@ class Fish extends Basecontroller
 		$this->load->view('headfoot/footer');
 	}
 
+	public function cariIkan()
+	{
+		$namaIkan = $this->input->get_post('q');
+		$ikan = $this->fish->getFishWhere("nama_ikan as label, nama_ikan as value", "nama_ikan LIKE '%$namaIkan%'")->result();
+		if(!empty($ikan)){
+			echo json_encode($ikan);
+		}else{
+			echo json_encode(['message' => 'negara not found', 'code' => 404]);
+		}
+		
+	}
+
 
 	function add()
 	{

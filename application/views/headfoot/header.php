@@ -19,7 +19,13 @@
 	<!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+	<![endif]-->
+
+	<script src="<?= base_url() ?>/assets/libs/jquery/dist/jquery.min.js"></script>
+
+	<!-- jQuery UI -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -47,7 +53,7 @@
 					<!-- ============================================================== -->
 					<!-- Logo -->
 					<!-- ============================================================== -->
-					<a class="navbar-brand" href="index.html">
+					<a class="navbar-brand" href="<?= site_url('fishery-activity') ?>">
 						<!-- Logo icon -->
 						<b class="logo-icon p-l-10">
 							<!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -93,15 +99,15 @@
 					<!-- Right side toggle and nav items -->
 					<!-- ============================================================== -->
 					<ul class="navbar-nav float-right">
-						
+
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?= base_url() ?>/assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31"></a>
 							<div class="dropdown-menu dropdown-menu-right user-dd animated">
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> <?= $this->session->userdata('nama');?></a>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> <?= $this->session->userdata('nama'); ?></a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="<?= site_url('welcome/logout')?>"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
-								
+								<a class="dropdown-item" href="<?= site_url('welcome/logout') ?>"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
+
 							</div>
 						</li>
 						<!-- ============================================================== -->
@@ -123,46 +129,49 @@
 				<!-- Sidebar navigation-->
 				<nav class="sidebar-nav">
 					<ul id="sidebarnav" class="p-t-30">
+						<li class="sidebar-item">
+							<a class="sidebar-link waves-effect waves-dark" href="<?= site_url('fishery-activity') ?>" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">Fishery Activity</span></a>
+						</li>
 						<li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">User </span></a>
 							<ul aria-expanded="false" class="collapse  first-level">
-								<li class="sidebar-item"><a href="<?= site_url('user/user-list')?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> List </span></a></li>
-								<li class="sidebar-item"><a href="<?= site_url('user/form-add')?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Add </span></a></li>
+								<li class="sidebar-item"><a href="<?= site_url('user/user-list') ?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> List </span></a></li>
+								<li class="sidebar-item"><a href="<?= site_url('user/form-add') ?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Add </span></a></li>
 							</ul>
 						</li>
 						<li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">Fishing Gear </span></a>
 							<ul aria-expanded="false" class="collapse  first-level">
-								<li class="sidebar-item"><a href="<?= site_url('fishing-gear/list')?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> List </span></a></li>
-								<li class="sidebar-item"><a href="<?= site_url('fishing-gear/form-add')?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Add </span></a></li>
+								<li class="sidebar-item"><a href="<?= site_url('fishing-gear/list') ?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> List </span></a></li>
+								<li class="sidebar-item"><a href="<?= site_url('fishing-gear/form-add') ?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Add </span></a></li>
 							</ul>
 						</li>
 						<li class="sidebar-item d-none"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">Currency </span></a>
 							<ul aria-expanded="false" class="collapse  first-level">
-								<li class="sidebar-item"><a href="<?= site_url('fishing-gear/list')?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> List </span></a></li>
-								<li class="sidebar-item"><a href="<?= site_url('fishing-gear/list')?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Add </span></a></li>
+								<li class="sidebar-item"><a href="<?= site_url('fishing-gear/list') ?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> List </span></a></li>
+								<li class="sidebar-item"><a href="<?= site_url('fishing-gear/list') ?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Add </span></a></li>
 							</ul>
 						</li>
 						<li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">Country </span></a>
 							<ul aria-expanded="false" class="collapse  first-level">
-								<li class="sidebar-item"><a href="<?= site_url('country/list')?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> List </span></a></li>
-								<li class="sidebar-item"><a href="<?= site_url('country/form-add')?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Add </span></a></li>
+								<li class="sidebar-item"><a href="<?= site_url('country/list') ?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> List </span></a></li>
+								<li class="sidebar-item"><a href="<?= site_url('country/form-add') ?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Add </span></a></li>
 							</ul>
 						</li>
 						<li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">Province </span></a>
 							<ul aria-expanded="false" class="collapse  first-level">
-								<li class="sidebar-item"><a href="<?= site_url('province/list')?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> List </span></a></li>
-								<li class="sidebar-item"><a href="<?= site_url('province/form-add')?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Add </span></a></li>
+								<li class="sidebar-item"><a href="<?= site_url('province/list') ?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> List </span></a></li>
+								<li class="sidebar-item"><a href="<?= site_url('province/form-add') ?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Add </span></a></li>
 							</ul>
 						</li>
 						<li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">District </span></a>
 							<ul aria-expanded="false" class="collapse  first-level">
-								<li class="sidebar-item"><a href="<?= site_url('district/list')?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> List </span></a></li>
-								<li class="sidebar-item"><a href="<?= site_url('district/form-add')?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Add </span></a></li>
+								<li class="sidebar-item"><a href="<?= site_url('district/list') ?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> List </span></a></li>
+								<li class="sidebar-item"><a href="<?= site_url('district/form-add') ?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Add </span></a></li>
 							</ul>
 						</li>
 						<li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">Fish </span></a>
 							<ul aria-expanded="false" class="collapse  first-level">
-								<li class="sidebar-item"><a href="<?= site_url('fish/list')?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> List </span></a></li>
-								<li class="sidebar-item"><a href="<?= site_url('fish/form-add')?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Add </span></a></li>
+								<li class="sidebar-item"><a href="<?= site_url('fish/list') ?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> List </span></a></li>
+								<li class="sidebar-item"><a href="<?= site_url('fish/form-add') ?>" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Add </span></a></li>
 							</ul>
 						</li>
 					</ul>
