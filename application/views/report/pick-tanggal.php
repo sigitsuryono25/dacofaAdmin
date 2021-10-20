@@ -8,6 +8,7 @@
 		<div class="card-body">
 			<form action="<?= site_url('report/show-report') ?>" method="POST">
 				<div class="form-group">
+				    <label>Surveyor</label>
 					<select name="userid" class="form-control" required>
 						<?php foreach ($user as $u) { ?>
 							<option value="<?= $u->userid?>"><?= $u->nama?></option>

@@ -11,7 +11,7 @@ class Report extends CI_Controller
 		$this->load->view('headfoot/footer');
 	}
 
-	function report()
+	function showReport()
 	{
 		$start = $this->input->get_post('start');
 		$end = $this->input->get_post('end');
