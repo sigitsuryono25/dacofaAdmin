@@ -26,6 +26,8 @@
 	<!-- jQuery UI -->
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+	<script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 </head>
 
 <body>
