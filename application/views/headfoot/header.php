@@ -28,6 +28,7 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 	<script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </head>
 
 <body>
@@ -60,16 +61,16 @@
 						<b class="logo-icon p-l-10">
 							<!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
 							<!-- Dark Logo icon -->
-							<img src="<?= base_url() ?>/assets/images/logo-icon.png" alt="homepage" class="light-logo" />
-
+							
+							<h4>Dacofa Admin Panel</h4>
 						</b>
 						<!--End Logo icon -->
 						<!-- Logo text -->
-						<span class="logo-text">
-							<!-- dark Logo text -->
+						<!-- <span class="logo-text">
+							
 							<img src="<?= base_url() ?>/assets/images/logo-text.png" alt="homepage" class="light-logo" />
 
-						</span>
+						</span> -->
 						<!-- Logo icon -->
 						<!-- <b class="logo-icon"> -->
 						<!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -97,15 +98,16 @@
 					<ul class="navbar-nav float-left mr-auto">
 						<li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
 						<li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                             <span class="d-none d-md-block">Activity&nbsp;&nbsp;<i class="fa fa-angle-down"></i></span>
-                             <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>   
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="<?= site_url('fishery-activity') ?>">Fishery Activity</a>
-                                <a class="dropdown-item" href="<?= site_url('report/generate')?>">Generate Report</a>
-                            </div>
-                        </li>
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="d-none d-md-block">Activity&nbsp;&nbsp;<i class="fa fa-angle-down"></i></span>
+								<span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="<?= site_url('fishery-activity') ?>">Fishery Activity</a>
+								<a class="dropdown-item" href="<?= site_url('report/generate') ?>">Generate Report</a>
+								<a class="dropdown-item" href="<?= site_url('report/statistik') ?>">Statistik</a>
+							</div>
+						</li>
 					</ul>
 					<!-- ============================================================== -->
 					<!-- Right side toggle and nav items -->

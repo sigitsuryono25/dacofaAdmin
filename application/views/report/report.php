@@ -1,3 +1,10 @@
+<?php if (empty($lokasi)) {
+	echo '<script>
+	alert("tidak data untuk user terpilih");
+	location.assign("'.site_url('report/generate').'");
+	</script>';
+	return;
+} ?>
 <div class="container-fluid">
 	<div class="card">
 		<div class="card-header">
@@ -80,7 +87,7 @@
 								?>
 									<tr>
 										<td class="text-center align-middle"><?= $i->id_ikan ?></td>
-										<td class="text-center align-middle"><?= $i->total_tangkapan ?></td>
+										<td class="text-center align-middle"><?= round($i->total_tangkapan, 2) ?></td>
 										<td class="text-center align-middle"><?= $i->harga ?></td>
 										<td class="text-center align-middle"><?= $i->mata_uang ?></td>
 										<td class="text-center align-middle"><?= $i->peruntukan ?></td>
@@ -159,7 +166,7 @@
 			sa = txtArea1.document.execCommand("SaveAs", true, "Say Thanks to Sumit.xls");
 		} else //other browser not tested on IE 11
 			sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));
-			sa.document.title = `DATA OF FISHING ACTIVITY ${startDate}-${endDate}__${name}`;
+		sa.document.title = `DATA OF FISHING ACTIVITY ${startDate}-${endDate}__${name}`;
 		return (sa);
 	}
 </script>

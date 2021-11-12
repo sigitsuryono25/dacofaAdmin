@@ -19,13 +19,13 @@
 					<div class="col-md-6 col-12">
 						<div class="form-group">
 							<label>Start Date</label>
-							<input type="date" name="start" class="form-control" required>
+							<input type="text" name="start" class="form-control datepicker" required>
 						</div>
 					</div>
 					<div class="col-md-6 col-12">
 						<div class="form-group">
 							<label>End Date</label>
-							<input type="date" name="end" class="form-control" required>
+							<input type="text" name="end" class="form-control datepicker" required>
 						</div>
 					</div>
 				</div>
@@ -39,3 +39,8 @@
 		</div>
 	</div>
 </div>
+<script>
+	$( ".datepicker" ).datepicker({
+		dateFormat: "yy-mm-dd"
+	});
+</script>
