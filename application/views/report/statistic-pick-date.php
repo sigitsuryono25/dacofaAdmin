@@ -2,20 +2,11 @@
 	<div class="card">
 		<div class="card-header">
 			<h5 class="card-title">
-				Generate Report
+				Show Statistic
 			</h5>
 		</div>
 		<div class="card-body">
-			<form action="<?= site_url('report/show-report') ?>" method="POST">
-				<div class="form-group">
-				    <label>Surveyor</label>
-					<select name="userid" class="form-control" required>
-							<option value="all">All Surveyor</option>
-						<?php foreach ($user as $u) { ?>
-							<option value="<?= $u->userid?>"><?= $u->nama?></option>
-						<?php } ?>
-					</select>
-				</div>
+			<form action="<?= site_url('report/statistik') ?>" method="GET">
 				<div class="row">
 					<div class="col-md-6 col-12">
 						<div class="form-group">
@@ -31,10 +22,6 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<button class="btn btn-sm btn-primary">
-						<i class="fas fa-eye "></i> &nbsp;&nbsp;
-						Generate Report
-					</button>
 					<button class="btn btn-sm btn-danger">
 						<i class="fas fa-eye "></i> &nbsp;&nbsp;
 						Show Statistic

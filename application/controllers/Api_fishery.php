@@ -9,7 +9,11 @@ class Api_fishery extends Baseapi
 		$json = file_get_contents("php://input");
 		$re = json_decode($json, true);
 
-
+        if(empty($re)){
+            $this->generalMessage("Silahkan isi hasil tangkapan terlebih dahulu");
+        }
+        
+        
 		$insDetail = $this->db->insert_batch('tb_detail_tangkapan', $re['detail']);
 		$insHeader = $this->db->insert_batch('tb_lokasi', $re['lokasi']);
 
@@ -51,5 +55,15 @@ class Api_fishery extends Baseapi
 
 		echo json_encode(['data_fishery' =>$data]);
 	}
+    
+    function getHasilTangkapan(){
+        $headerId = $this->input->get('header');
+        $detail = $this->db->query("SELECT * FROM tb_detail_tangkapan WHERE id_header in ('$headerId')")->result();
+        if(!empty($detail)){
+            echo json_encode(['message' => "dat ditemukan", 'code' => 200, 'data_tangkapan' => $detail]);
+        }else{
+            echo json_encode(['message'=>"tidak ada data", "code" => 404]);
+        }
+    }
 }
 

@@ -117,5 +117,5 @@ $route['district/action-delete'] = "District/deleteDistrict";
 $route['district/action-search'] = "District/cariKabupaten";
 
 //report
-$route['report/generate'] = "report/index";
-$route['report/show-report'] = "report/showReport";
+$route['report/generate'] = "Report/index";
+$route['report/show-report'] = "Report/showReport";

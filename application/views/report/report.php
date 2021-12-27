@@ -36,6 +36,8 @@
 							<th rowspan="2" class="align-middle text-center">Date</th>
 							<th colspan="2" class="align-middle text-center">Fishing Gear</th>
 							<th rowspan="2" class="align-middle text-center">Amount Of Fishing Gear (Unit)</th>
+							<th rowspan="2" class="align-middle text-center">Province</th>
+							<th rowspan="2" class="align-middle text-center">District</th>
 							<th rowspan="2" class="align-middle text-center">Fishing Ground</th>
 							<th rowspan="2" class="align-middle text-center">Location</th>
 							<th rowspan="2" class="align-middle text-center">Operation Time (Hours)</th>
@@ -66,16 +68,19 @@
 								$rowSpan = 2;
 							}
 						?>
-							<tr>
-								<td rowspan="<?= $rowSpan ?>" class="text-center align-middle"><?= $no ?></td>
-								<td rowspan="<?= $rowSpan ?>" class="text-center align-middle"><?= $l->tanggal ?></td>
-								<td rowspan="<?= $rowSpan ?>" class="text-center align-middle"><?= $l->alat_tangkap ?></td>
-								<td rowspan="<?= $rowSpan ?>" class="text-center align-middle"><?= $l->ukuran_jaring ?></td>
-								<td rowspan="<?= $rowSpan ?>" class="text-center align-middle"><?= $l->jumla_alat ?></td>
-								<td rowspan="<?= $rowSpan ?>" class="text-center align-middle"><?= $l->area ?></td>
-								<td rowspan="<?= $rowSpan ?>" class="text-center align-middle"><?= $l->lokasi ?></td>
-								<td rowspan="<?= $rowSpan ?>" class="text-center align-middle"><?= $l->lama_operasi ?></td>
-							</tr>
+							<!--<tr>-->
+							<!--	<td rowspan="<?= $rowSpan ?>" class="text-center align-middle"><?= $no ?></td>-->
+							<!--	<td rowspan="<?= $rowSpan ?>" class="text-center align-middle"><?= $l->tanggal ?></td>-->
+							<!--	<td rowspan="<?= $rowSpan ?>" class="text-center align-middle"><?= $l->alat_tangkap ?></td>-->
+							<!--	<td rowspan="<?= $rowSpan ?>" class="text-center align-middle"><?= $l->ukuran_jaring ?></td>-->
+							<!--	<td rowspan="<?= $rowSpan ?>" class="text-center align-middle"><?= $l->jumla_alat ?></td>-->
+							<!--	<td rowspan="<?= $rowSpan ?>" class="text-center align-middle"><?= $l->id_provinsi ?></td>-->
+							<!--	<td rowspan="<?= $rowSpan ?>" class="text-center align-middle"><?= $l->id_kabupaten ?></td>-->
+							<!--	<td rowspan="<?= $rowSpan ?>" class="text-center align-middle"><?= $l->area ?></td>-->
+							<!--	<td rowspan="<?= $rowSpan ?>" class="text-center align-middle"><?= $l->lokasi ?></td>-->
+							<!--	<td rowspan="<?= $rowSpan ?>" class="text-center align-middle"><?= $l->lama_operasi ?></td>-->
+							
+							<!--</tr>-->
 							<?php
 							if (empty($listIkan)) { ?>
 								<tr>
@@ -86,19 +91,29 @@
 								foreach ($listIkan as $key => $i) {
 								?>
 									<tr>
+									    	<td  class="text-center align-middle"><?= $no ?></td>
+								<td  class="text-center align-middle"><?= $l->tanggal ?></td>
+								<td  class="text-center align-middle"><?= $l->alat_tangkap ?></td>
+								<td  class="text-center align-middle"><?= $l->ukuran_jaring ?></td>
+								<td  class="text-center align-middle"><?= $l->jumla_alat ?></td>
+								<td  class="text-center align-middle"><?= $l->id_provinsi ?></td>
+								<td  class="text-center align-middle"><?= $l->id_kabupaten ?></td>
+								<td  class="text-center align-middle"><?= $l->area ?></td>
+								<td  class="text-center align-middle"><?= $l->lokasi ?></td>
+								<td  class="text-center align-middle"><?= $l->lama_operasi ?></td>
 										<td class="text-center align-middle"><?= $i->id_ikan ?></td>
 										<td class="text-center align-middle"><?= round($i->total_tangkapan, 2) ?></td>
 										<td class="text-center align-middle"><?= $i->harga ?></td>
 										<td class="text-center align-middle"><?= $i->mata_uang ?></td>
 										<td class="text-center align-middle"><?= $i->peruntukan ?></td>
 										<?php if ($key == 0) { ?>
-											<td rowspan="<?= $rowSpan - 1 ?>" class="text-center align-middle"><?= $i->grand ?></td>
+											<td rowspan="<?= $rowSpan - 1 ?>" class="text-center align-middle"><?= round($i->grand, 2) ?></td>
 										<?php } ?>
-									<?php } ?>
+									<?php $no++; } ?>
 									</tr>
 								<?php
 							} ?>
-							<?php $no++;
+							<?php 
 						} ?>
 					</tbody>
 				</table>
@@ -166,7 +181,7 @@
 			sa = txtArea1.document.execCommand("SaveAs", true, "Say Thanks to Sumit.xls");
 		} else //other browser not tested on IE 11
 			sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));
-		sa.document.title = `DATA OF FISHING ACTIVITY ${startDate}-${endDate}__${name}`;
+			sa.document.title = `DATA OF FISHING ACTIVITY ${startDate}-${endDate}__${name}`;
 		return (sa);
 	}
 </script>

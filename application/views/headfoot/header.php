@@ -8,6 +8,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
+	<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 	<!-- Favicon icon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="<?= base_url() ?>/assets/images/favicon.png">
 	<title>Dacofa Admin Panel</title>
@@ -29,6 +46,8 @@
 
 	<script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+	
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.4.0/dist/chartjs-plugin-datalabels.min.js"></script>
 </head>
 
 <body>
@@ -61,16 +80,11 @@
 						<b class="logo-icon p-l-10">
 							<!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
 							<!-- Dark Logo icon -->
-							
 							<h4>Dacofa Admin Panel</h4>
+
 						</b>
 						<!--End Logo icon -->
 						<!-- Logo text -->
-						<!-- <span class="logo-text">
-							
-							<img src="<?= base_url() ?>/assets/images/logo-text.png" alt="homepage" class="light-logo" />
-
-						</span> -->
 						<!-- Logo icon -->
 						<!-- <b class="logo-icon"> -->
 						<!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -98,16 +112,16 @@
 					<ul class="navbar-nav float-left mr-auto">
 						<li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<span class="d-none d-md-block">Activity&nbsp;&nbsp;<i class="fa fa-angle-down"></i></span>
-								<span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
-							</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="<?= site_url('fishery-activity') ?>">Fishery Activity</a>
-								<a class="dropdown-item" href="<?= site_url('report/generate') ?>">Generate Report</a>
-								<a class="dropdown-item" href="<?= site_url('report/statistik') ?>">Statistik</a>
-							</div>
-						</li>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             <span class="d-none d-md-block">Activity&nbsp;&nbsp;<i class="fa fa-angle-down"></i></span>
+                             <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>   
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="<?= site_url('fishery-activity') ?>">Fishery Activity</a>
+                                <a class="dropdown-item" href="<?= site_url('report/generate')?>">Generate Report</a>
+								<a class="dropdown-item" href="<?= site_url('report/showPickStatistic') ?>">Statistik</a>
+                            </div>
+                        </li>
 					</ul>
 					<!-- ============================================================== -->
 					<!-- Right side toggle and nav items -->

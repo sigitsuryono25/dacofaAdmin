@@ -22,6 +22,15 @@ class Baseapi extends CI_Controller
 			"code" => 400
 		]));
 	}
+	
+	function generalMessage($message = "Bad Request")
+	{
+		die(json_encode([
+			'message' => $message,
+			"code" => 300
+		]));
+	}
+
 
 	function internalError($message = "Internal Server Error")
 	{
